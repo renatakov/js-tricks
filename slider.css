@@ -1,0 +1,23 @@
+.slider {
+}
+
+.slider__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  /* width: 500px; */
+}
+.card > img{
+  width: 500px;
+}
+.card1 {
+}
+.card2 {
+}
+.card3 {
+}
+.prevBtn {
+}
+.nextBtn {
+}
