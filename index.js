@@ -15,20 +15,47 @@
 // console.table(localStorage);
 
 // API
-const div = document.querySelector('div');
+// const div = document.querySelector('div');
 
-fetch('https://newsdata.io/api/1/news?apikey=pub_181525573a2385a4c3925ecabbc34111be4a4')
-.then(res => res.json())
-.then(data=>{
-console.log(data.results)
-  for(let i = 0; i < data.results.length; i++){
-    div.innerHTML += `
-    <span>${data.results[i].category}</span>
-      <h1>${data.results[i].title}</h1>
-      <p>${data.results[i].content}</p>
-    `
-  }
+// fetch('https://newsdata.io/api/1/news?apikey=pub_181525573a2385a4c3925ecabbc34111be4a4')
+// .then(res => res.json())
+// .then(data=>{
+// console.log(data.results)
+//   for(let i = 0; i < data.results.length; i++){
+//     div.innerHTML += `
+//     <span>${data.results[i].category}</span>
+//       <h1>${data.results[i].title}</h1>
+//       <p>${data.results[i].content}</p>
+//     `
+//   }
+// }
+
+//   )
+//   .catch(err => console.log(err));
+
+// keyevents
+
+const div = document.querySelector('div');
+const btn  = document.querySelector('button');
+let position = 0;
+
+btn.addEventListener('keypress', (e) => {
+if(e.key == 'd'){
+  position+=50
+  div.style.left = position + 'px';
+}
+if(e.key == 'a'){
+  position+=-50
+  div.style.left = position + 'px';
+}
+if(e.key == 'w'){
+  position+=-50
+  div.style.top = position + 'px';
+}
+if(e.key == 's'){
+  position+=50
+  div.style.top = position + 'px';
 }
 
-  )
-  .catch(err => console.log(err));
+
+})
