@@ -15,11 +15,20 @@
 // console.table(localStorage);
 
 // API
-const h1 = document.querySelector('h1');
+const div = document.querySelector('div');
 
-fetch('http://api.weatherapi.com/v1/current.json?key=f57ded1f279f4aeaa14102446232101&q=Krakov&aqi=no')
+fetch('https://newsdata.io/api/1/news?apikey=pub_181525573a2385a4c3925ecabbc34111be4a4')
 .then(res => res.json())
-.then(data=>
-  h1.innerText = `${data.current.temp_c}°C in ${data.location.name}`
+.then(data=>{
+console.log(data.results)
+  for(let i = 0; i < data.results.length; i++){
+    div.innerHTML += `
+    <span>${data.results[i].category}</span>
+      <h1>${data.results[i].title}</h1>
+      <p>${data.results[i].content}</p>
+    `
+  }
+}
+
   )
   .catch(err => console.log(err));
