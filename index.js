@@ -35,27 +35,27 @@
 
 // keyevents
 
-const div = document.querySelector('div');
-const btn  = document.querySelector('button');
-let position = 0;
+// const div = document.querySelector('div');
+// const btn  = document.querySelector('button');
+// let position = 0;
 
-btn.addEventListener('keypress', (e) => {
-if(e.key == 'd'){
-  position+=50
-  div.style.left = position + 'px';
-}
-if(e.key == 'a'){
-  position+=-50
-  div.style.left = position + 'px';
-}
-if(e.key == 'w'){
-  position+=-50
-  div.style.top = position + 'px';
-}
-if(e.key == 's'){
-  position+=50
-  div.style.top = position + 'px';
-}
+// btn.addEventListener('keypress', (e) => {
+// if(e.key == 'd'){
+//   position+=50
+//   div.style.left = position + 'px';
+// }
+// if(e.key == 'a'){
+//   position+=-50
+//   div.style.left = position + 'px';
+// }
+// if(e.key == 'w'){
+//   position+=-50
+//   div.style.top = position + 'px';
+// }
+// if(e.key == 's'){
+//   position+=50
+//   div.style.top = position + 'px';
+// }
 
 
-})
+// })

@@ -1,10 +1,4 @@
-// const card = document.querySelectorAll('.card');
-// const prevBtn = document.querySelector('.prevBtn');
-// const nextBtn = document.querySelector('.nextBtn');
-
-// prevBtn.addEventListener('click', () => {
-
-// })
-// nextBtn.addEventListener('click', () => {
-
-//   })
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+let img = document.querySelectorAll('img');
+console.log(img);

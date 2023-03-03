@@ -1,23 +1,10 @@
-.slider {
-}
-
-.slider__wrapper {
+.sliderContainer{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  /* width: 500px; */
+  width: 100%;
 }
-.card > img{
-  width: 500px;
-}
-.card1 {
-}
-.card2 {
-}
-.card3 {
-}
-.prevBtn {
-}
-.nextBtn {
+.photo{
+  width: 50%;
+  height: auto;
 }
