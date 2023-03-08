@@ -59,3 +59,26 @@
 
 
 // })
+
+// axios
+const inputSearch = document.querySelector('#inputSearch');
+let body = document.querySelector('body');
+let h1 = document.querySelector('h1');
+let p = document.querySelector('p');
+let users = []
+inputSearch.addEventListener('input', (e) => {
+    console.log(e.target.value);
+    users.forEach(user => {
+        if(user.name.toLowerCase().includes(e.target.value.toLowerCase())){
+            h1.innerText = `${user.name}`;
+            p.innerText = `${user.email}`;
+        }
+    })
+})
+
+axios.get('https://jsonplaceholder.typicode.com/users')
+.then((res)=>{
+    console.log(res.data);
+    users = res.data;
+    
+})
