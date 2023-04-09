@@ -61,24 +61,54 @@
 // })
 
 // axios
-const inputSearch = document.querySelector('#inputSearch');
-let body = document.querySelector('body');
-let h1 = document.querySelector('h1');
-let p = document.querySelector('p');
-let users = []
-inputSearch.addEventListener('input', (e) => {
-    console.log(e.target.value);
-    users.forEach(user => {
-        if(user.name.toLowerCase().includes(e.target.value.toLowerCase())){
-            h1.innerText = `${user.name}`;
-            p.innerText = `${user.email}`;
-        }
-    })
-})
+// const inputSearch = document.querySelector('#inputSearch');
+// let body = document.querySelector('body');
+// let h1 = document.querySelector('h1');
+// let p = document.querySelector('p');
+// let users = []
+// inputSearch.addEventListener('input', (e) => {
+//     console.log(e.target.value);
+//     users.forEach(user => {
+//         if(user.name.toLowerCase().includes(e.target.value.toLowerCase())){
+//             h1.innerText = `${user.name}`;
+//             p.innerText = `${user.email}`;
+//         }
+//     })
+// })
 
-axios.get('https://jsonplaceholder.typicode.com/users')
-.then((res)=>{
-    console.log(res.data);
-    users = res.data;
+// axios.get('https://jsonplaceholder.typicode.com/users')
+// .then((res)=>{
+//     console.log(res.data);
+//     users = res.data;
+    
+// })
+
+const numbers = [11, 2, 55, 3]
+
+    numbers.sort((a, b) =>{
+    return b - a; // 55, 11, 3, 2
     
 })
+
+console.log(numbers);
+
+numbers.reduce((acc, currentValue) => {
+    return acc + currentValue;
+})
+
+console.log(numbers.reduce((acc, currentValue) => {
+    return acc + currentValue; // 71
+}))
+
+numbers.splice(0, 2, 33, 22)
+console.log(numbers); // 33, 22, 3, 2
+
+const numbers2 = numbers.slice(0, 2)
+console.log(numbers2); // [33, 22]
+const numbers3 = [1, 2, 13, 4];
+
+console.log(numbers3.filter((a,b)=> a>3)) // 13, 4
+
+const numbers4 = [1, 2, 13, 4];
+
+console.log(numbers4.fill(10))// 10, 10, 10, 10
