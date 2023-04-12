@@ -107,8 +107,30 @@ const numbers2 = numbers.slice(0, 2)
 console.log(numbers2); // [33, 22]
 const numbers3 = [1, 2, 13, 4];
 
-console.log(numbers3.filter((a,b)=> a>3)) // 13, 4
+console.log(numbers3.filter((a)=> a>3)) // 13, 4
 
 const numbers4 = [1, 2, 13, 4];
 
 console.log(numbers4.fill(10))// 10, 10, 10, 10
+
+const users = [
+    {
+        id: 1,
+        name: 'John',
+        email: 'kenaa@example.com'
+    },
+    {
+        id: 2,
+        name: 'Jane',
+        email: 'kenaa@example.com'
+    },
+    {
+        id: 3,
+        name: 'Mike',
+        email: 'kenaa@example.com'
+    }
+]
+
+
+// console.log(users.filter((user) => { return user.name.toLocaleLowerCase().includes('j')}))
+console.log(users.filter((user) => { return user.id >= 2}))
