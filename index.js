@@ -134,3 +134,50 @@ const users = [
 
 // console.log(users.filter((user) => { return user.name.toLocaleLowerCase().includes('j')}))
 console.log(users.filter((user) => { return user.id >= 2}))
+axios.get('https://jsonplaceholder.typicode.com/users')
+.then((res)=>{
+    console.log(res.data);
+    users = res.data;
+    
+})
+
+// login
+const inputEmail = document.querySelector('.inputEmail')
+const inputPassword = document.querySelector('.inputPassword')
+const loginBtn = document.querySelector('.loginBtn')
+
+const accounts = [
+    {
+        id: 1,
+        name: "Bob",
+        email: "bob228@gmail.com",
+        password: "qwerty321"
+    },
+    {
+        id: 2,
+        name: "Jake",
+        email: "jake123@gmail.com",
+        password: "1234!"
+    }
+]
+
+let inputEmailValue, inputPasswordValue;
+
+inputEmail.addEventListener("input", (e) => {
+    inputEmailValue = e.target.value
+})
+
+inputPassword.addEventListener("input", (e) => {
+    inputPasswordValue = e.target.value
+})
+
+loginBtn.addEventListener("click", () => {
+    const filteredAccounts = accounts.filter((acc)=>{
+        if(inputEmailValue == acc.email && inputPasswordValue == acc.password){
+            console.log("loggined")
+            // console.table()
+            sessionStorage.setItem("userEmail", acc.email)
+            sessionStorage.setItem("userPassword", acc.password)
+        }
+    })
+})
