@@ -49,8 +49,13 @@ console.log(number.search(/^\+\d{2}\s\d{3}-\d{3}-\d{2}-\d{2}/))
 let email = "renatakov1010@gmail.com"
 email.search(/\w\d@gmail\.com/)
 let test = "I walk Through The wall"
+let multiplyString = "I walk through the wall. I saw a portal. I walked through the portal"
+let regExp = /through/gs
+console.log(multiplyString.search(/through/sg))
 console.log(test.search(/th/i))
-console.log(test.replace(/wall/gi, "portal"))
+console.log(regExp.exec(multiplyString))
+console.log(regExp.exec(multiplyString))
+
 
 
 
