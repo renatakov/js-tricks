@@ -44,19 +44,30 @@
 // 7. `d` (отладочный режим):
 //    Флаг `d` позволяет добавить комментарии и пробелы в регулярное выражение для улучшения его читаемости. 
 // Этот флаг не является стандартом и поддерживается не всеми браузерами.
-let number = "+38 097-221-17-92"
-console.log(number.search(/^\+\d{2}\s\d{3}-\d{3}-\d{2}-\d{2}/))
-let email = "renatakov1010@gmail.com"
-email.search(/\w\d@gmail\.com/)
-let test = "I walk Through The wall"
-let multiplyString = "I walk through the wall. I saw a portal. I walked through the portal"
-let regExp = /through/gs
-console.log(multiplyString.search(/through/sg))
-console.log(test.search(/th/i))
-console.log(regExp.exec(multiplyString))
-console.log(regExp.exec(multiplyString))
+// let number = "+38 097-221-17-92"
+// console.log(number.search(/^\+\d{2}\s\d{3}-\d{3}-\d{2}-\d{2}/))
+// let email = "renatakov1010@gmail.com"
+// email.search(/\w\d@gmail\.com/)
+// let test = "I walk Through The wall"
+// let multiplyString = "I walk through the wall. I saw a portal. I walked through the portal"
+// let regExp = /through/gs
+// console.log(multiplyString.search(/through/sg))
+// console.log(test.search(/th/i))
+// console.log(regExp.exec(multiplyString))
+// console.log(regExp.exec(multiplyString))
 
+// let nums1 = [123, 1988, 55, 43, 10,]
+// // let pattern = /1/g
 
+// // console.log(numbers)
+// nums1.forEach((item)=>{
+// if(item / 1000 | 0){
+//     console.log(item % 1000)
+//     item = item.toString().replace(/^[1-9]/, 'M')
+//     console.log(item)
+    
+// }
+// })
 
 
 
