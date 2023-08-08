@@ -56,20 +56,33 @@
 // console.log(regExp.exec(multiplyString))
 // console.log(regExp.exec(multiplyString))
 
-// let nums1 = [123, 1988, 55, 43, 10,]
-// // let pattern = /1/g
+const obj = {
+    I: 1,
+    IV: 4,
+    V: 5,
+    IX: 9,
+    X: 10,
+    XL: 40,
+    L: 50,
+    XC: 90,
+    C: 100,
+    CD: 400,
+    D: 500,
+    CM: 900,
+    M: 1000
+}
 
-// // console.log(numbers)
-// nums1.forEach((item)=>{
-// if(item / 1000 | 0){
-//     console.log(item % 1000)
-//     item = item.toString().replace(/^[1-9]/, 'M')
-//     console.log(item)
-    
+// let a = 1
+
+// while(a <= 5){
+//     a++
+//     console.log(a)
 // }
-// })
 
-
+// for(let key in obj){
+//     console.log(obj[key])
+//     // jake, 21, jake123@gmail.com
+// }
 
 // let inputEmail1 = document.querySelector("#inputMail")
 // let inputEmailValue1
