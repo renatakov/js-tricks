@@ -142,42 +142,42 @@
 // })
 
 // login
-const inputEmail = document.querySelector('.inputEmail')
-const inputPassword = document.querySelector('.inputPassword')
-const loginBtn = document.querySelector('.loginBtn')
+// const inputEmail = document.querySelector('.inputEmail')
+// const inputPassword = document.querySelector('.inputPassword')
+// const loginBtn = document.querySelector('.loginBtn')
 
-const accounts = [
-    {
-        id: 1,
-        name: "Bob",
-        email: "bob228@gmail.com",
-        password: "qwerty321"
-    },
-    {
-        id: 2,
-        name: "Jake",
-        email: "jake123@gmail.com",
-        password: "1234!"
-    }
-]
+// const accounts = [
+//     {
+//         id: 1,
+//         name: "Bob",
+//         email: "bob228@gmail.com",
+//         password: "qwerty321"
+//     },
+//     {
+//         id: 2,
+//         name: "Jake",
+//         email: "jake123@gmail.com",
+//         password: "1234!"
+//     }
+// ]
 
-let inputEmailValue, inputPasswordValue;
+// let inputEmailValue, inputPasswordValue;
 
-inputEmail.addEventListener("input", (e) => {
-    inputEmailValue = e.target.value
-})
+// inputEmail.addEventListener("input", (e) => {
+//     inputEmailValue = e.target.value
+// })
 
-inputPassword.addEventListener("input", (e) => {
-    inputPasswordValue = e.target.value
-})
+// inputPassword.addEventListener("input", (e) => {
+//     inputPasswordValue = e.target.value
+// })
 
-loginBtn.addEventListener("click", () => {
-    const filteredAccounts = accounts.filter((acc)=>{
-        if(inputEmailValue == acc.email && inputPasswordValue == acc.password){
-            console.log("loggined")
-            // console.table()
-            sessionStorage.setItem("userEmail", acc.email)
-            sessionStorage.setItem("userPassword", acc.password)
-        }
-    })
-})
+// loginBtn.addEventListener("click", () => {
+//     const filteredAccounts = accounts.filter((acc)=>{
+//         if(inputEmailValue == acc.email && inputPasswordValue == acc.password){
+//             console.log("loggined")
+//             // console.table()
+//             sessionStorage.setItem("userEmail", acc.email)
+//             sessionStorage.setItem("userPassword", acc.password)
+//         }
+//     })
+// })
