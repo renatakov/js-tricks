@@ -169,3 +169,188 @@ document.querySelector(".btnSub").addEventListener("click", ()=>{
 // }
 
 // console.log(f2([2, 3, 14, 17, 1, 18], f1))
+
+//call, apply, bind, this
+
+// В JavaScript, метод call() используется для вызова функции с заданным значением
+//  this и передачи аргументов в эту функцию в явном виде. 
+// Этот метод позволяет установить контекст выполнения функции (значение this) и передать аргументы одновременно. 
+// Синтаксис метода call() выглядит следующим образом:
+
+
+//функция.call(контекст, аргумент1, аргумент2, ...);
+
+// Где:
+
+// функция - это функция, которую вы хотите вызвать.
+// контекст - это значение this, которое будет использоваться внутри функции, когда она вызывается с помощью call().
+// аргумент1, аргумент2, и так далее - это аргументы, которые вы хотите передать в функцию.
+// Пример использования метода call():
+
+// const person = {
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+
+// function sayHello() {
+//   console.log(`Hello, ${this.firstName} ${this.lastName}`);
+// }
+
+// sayHello.call(person); // Вызываем функцию sayHello с контекстом person
+// В этом примере call() используется для вызова функции sayHello() с контекстом объекта person, что позволяет функции обратиться к свойствам firstName и lastName объекта person.
+
+// Кроме метода call(), в JavaScript также существует методы apply() и bind(), которые позволяют устанавливать контекст выполнения функции и передавать аргументы, но имеют некоторые различия в синтаксисе и поведении.
+
+
+// const nums = {
+//     num1: 203,
+//     num2: 107
+// }
+// const arrWithNums = [14, 2]
+
+// function add(a, b){
+//     return (a * (this.num1 + this.num2))/b
+// }
+
+// console.log(add.call(nums, 5, 10)) // 155
+
+//Метод apply() вызывает функцию с указанным значением this и аргументами,
+// предоставленными в виде массива (либо массивоподобного объекта (en-US)).
+
+// console.log(add.apply(nums, arrWithNums)) // 2170
+
+
+// bind() - это метод в JavaScript, который используется для создания новой функции с определенным значением this и,
+ //по желанию, предопределенными аргументами. Он не вызывает функцию сразу, как call() или apply(), а возвращает новую функцию,
+//  которую можно вызвать позже.
+
+// Синтаксис метода bind() выглядит следующим образом:
+
+// javascript
+// Copy code
+// новая_функция = функция.bind(контекст, [аргумент1, аргумент2, ...]);
+// Где:
+
+// функция - это функция, для которой вы хотите установить контекст this.
+// контекст - это значение this, которое будет использоваться внутри новой функции.
+// [аргумент1, аргумент2, ...] - необязательные аргументы, которые будут предопределены в созданной функции.
+// Пример использования метода bind():
+
+// javascript
+// Copy code
+// const person = {
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+
+// function sayHello() {
+//   console.log(`Hello, ${this.firstName} ${this.lastName}`);
+// }
+
+// // Создаем новую функцию, которая всегда будет иметь контекст person
+// const sayHelloToPerson = sayHello.bind(person);
+
+// // Вызываем новую функцию
+// sayHelloToPerson(); // Вывод: "Hello, John Doe"
+// В этом примере мы создали новую функцию sayHelloToPerson, которая всегда будет иметь контекст объекта person, 
+// независимо от того, как она вызывается. Мы можем вызвать эту новую функцию, и она будет использовать контекст person для доступа к 
+//его свойствам.
+
+// bind() полезен, когда вы хотите создать функцию с постоянным контекстом this, 
+// // чтобы передать ее как обработчик события или использовать в других местах, где контекст может изменяться.
+// let person = {
+//     firstName: "Renata",
+//     lastName: "Kovalova", 
+//     age: 15
+// }
+// let count =0;
+// function increment(){
+// count++
+// console.log(`${this.lastName} ${this.firstName}: ${count}`)
+// }
+
+// const incrementFunc = increment.bind(person)
+// for(let i = 0; i < person.age; i++){
+//     incrementFunc()
+// Kovalova Renata: 1
+// Kovalova Renata: 2
+// Kovalova Renata: 3
+// Kovalova Renata: 4
+// Kovalova Renata: 5
+// Kovalova Renata: 6
+// Kovalova Renata: 7
+// Kovalova Renata: 8
+// Kovalova Renata: 9
+// Kovalova Renata: 10
+// Kovalova Renata: 11
+// Kovalova Renata: 12
+// Kovalova Renata: 13
+// Kovalova Renata: 14
+// Kovalova Renata: 15
+// }
+
+//1
+
+//Изменение this в обработчике события с bind():
+//Создайте элемент HTML <button> и назначьте ему обработчик события click. Используйте метод bind(), 
+//чтобы связать функцию-обработчик события с определенным контекстом.
+
+// let count = {
+//     count: 0
+// }
+
+// function increment(){
+// this.count++
+// return this.count
+// }
+
+// const f = increment.bind(count)
+
+// document.querySelector(".increment-btn").addEventListener("click",(e)=>{
+// e.target.innerHTML = f()
+// });
+
+//2
+// Привязка функции к объекту с bind():
+// Создайте объект car с методом start, который выводит сообщение о запуске.
+// Используйте метод bind() для создания функции startCar, привязанной к объекту car, и вызовите ее.
+
+// const car = {
+//     start(){
+//         console.log('car started')
+//     }
+// }
+
+// const startCar = car.start.bind(car)
+// startCar()
+
+//3
+
+// Применение функции с динамическими аргументами с apply():
+// Напишите функцию findMax, которая находит максимальное значение из массива чисел.
+// Используйте метод apply(), чтобы передавать массив чисел как аргументы.
+
+
+// function funcMax(){
+    
+    //         return Math.max.apply(null, this)
+    //                             //this - массив как аргумент для ф-ции Math.max(), контекст не используется
+    // } 
+    
+    
+    // console.log(funcMax.call(arrNum))
+    
+//     const arrNum = [32, 1, 13, 43, 89, 7, 11]
+// function findMaxN(arr){
+// let max = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//         max = arr[i]; 
+//     }
+//     }
+
+//     return max;
+// }
+
+// console.log(findMaxN.apply(null, [arrNum]))
