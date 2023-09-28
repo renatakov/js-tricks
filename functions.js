@@ -371,13 +371,27 @@ document.querySelector(".btnSub").addEventListener("click", ()=>{
 
 //1
 
-let i = 100
-let sum = 0
-function recursion(){
-    i++
-    sum += i
-    if(i>200) return;
-    recursion()
-}
-recursion()
-console.log(sum) //15251
+// let i = 100
+// let sum = 0
+// function recursion(){
+//     i++
+//     sum += i
+//     if(i>200) return;
+//     recursion()
+// }
+// recursion()
+// console.log(sum) //15251
+
+//2
+// let list = [];
+// function recursion2(num1, num2){
+//     num1 = num1 + 1
+// if(num1<num2){
+//     list.push(num1)
+//     recursion2(num1, num2)
+// }
+    
+// }
+
+// recursion2(1, 15)
+// console.log(list)
