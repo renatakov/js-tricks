@@ -354,3 +354,30 @@ document.querySelector(".btnSub").addEventListener("click", ()=>{
 // }
 
 // console.log(findMaxN.apply(null, [arrNum]))
+
+//-------------------рекурсия - вызов функцией самой себя
+
+// let i = 0
+// let out = ''
+// function f2(){
+//     i++
+//     out += i + ' '
+//     if(i>=30)return;
+//     f2()
+// }
+
+// f2();
+// console.log(out)
+
+//1
+
+let i = 100
+let sum = 0
+function recursion(){
+    i++
+    sum += i
+    if(i>200) return;
+    recursion()
+}
+recursion()
+console.log(sum) //15251
