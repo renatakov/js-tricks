@@ -395,3 +395,153 @@ document.querySelector(".btnSub").addEventListener("click", ()=>{
 
 // recursion2(1, 15)
 // console.log(list)
+
+//3
+
+
+// Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+
+// Например:
+
+// sumTo(1) = 1
+// sumTo(2) = 2 + 1 = 3
+// sumTo(3) = 3 + 2 + 1 = 6
+// sumTo(4) = 4 + 3 + 2 + 1 = 10
+// ...
+// sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050
+// Сделайте три варианта решения:
+
+// С использованием цикла.
+// Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) for n > 1.
+// Пример работы вашей функции:
+
+// function sumTo(n) { /*... ваш код ... */ }
+// alert( sumTo(100) ); // 5050
+//3.1
+
+// function sumTo(n){
+//     let sum = 0
+// for (let i=0;i<=n; n--){
+//     sum += n
+// }
+// return sum
+// }
+
+// console.log(sumTo(100)) // 5050
+
+//3.2
+// function sumToRecursive(n){
+//     let sum = 0;
+// if(n > 0){
+//     sum = n + sumToRecursive(n-1)
+// }
+// return sum
+
+// }
+// console.log(sumToRecursive(100)) // 5050
+
+//4
+
+// Факториал натурального числа – это число, умноженное на "себя минус один", затем на "себя минус два", и так далее до 1. Факториал n обозначается как n!
+
+// Определение факториала можно записать как:
+
+// n! = n * (n - 1) * (n - 2) * ...*1
+// Примеры значений для разных n:
+
+// 1! = 1
+// 2! = 2 * 1 = 2
+// 3! = 3 * 2 * 1 = 6
+// 4! = 4 * 3 * 2 * 1 = 24
+// 5! = 5 * 4 * 3 * 2 * 1 = 120
+// Задача – написать функцию factorial(n), которая возвращает n!, используя рекурсию.
+
+// function factorialRecursive(n){
+//     if(n === 1){
+//         return n
+//     } else{
+//         return n * factorialRecursive(n-1);
+//     }
+// }
+
+// console.log(factorialRecursive(4)) // 24
+
+//5
+
+
+// Допустим, у нас есть односвязный список (как описано в главе Рекурсия и стек):
+
+let list = {
+    value: 1,
+    next: {
+    value: 2,
+    next: {
+        value: 3,
+        next: {
+        value: 4,
+        next: null
+        }
+    }
+    }
+};
+// Напишите функцию printList(list), которая выводит элементы списка по одному.
+
+// Сделайте два варианта решения: используя цикл и через рекурсию.
+
+// function printList(list) {
+//     console.log(list.value)
+//     while (list.next !== null) {
+//         list = list.next 
+//         console.log(list.value)
+//     }
+// }
+
+
+// printList(list); // 1,2,3,4
+
+
+// function printListRecursive2(list){
+//     console.log(list.value)
+//     if(list.next !== null){
+//         printListRecursive2(list.next)
+//     }
+// }
+// printListRecursive2(list)1,2,3,4
+
+//6
+
+//  function printListReverse(list){
+//     list.next.value = 4
+// for(let i = 0; i<list.next.value; list.next.value--){
+//         console.log(list.next.value)
+// }
+// }
+// printListReverse(list)
+// function printListReverse(list){
+// if(list === null){
+//     return;
+// } else{
+//     printListReverse(list.next)
+//     console.log(list.value)
+// }
+// }
+
+// printListReverse(list)
+
+//-------------------ЗАМЫКАНИЯ----------
+// Замыкание — это комбинация функции и лексического окружения, в котором эта функция была определена.
+//  Другими словами, замыкание даёт вам доступ к Scope (en-US) внешней функции из внутренней функции.
+//   В JavaScript замыкания создаются каждый раз при создании функции, во время её создания.
+
+// function makeFunc() {
+//     var name = "Mozilla";
+  
+//     function displayName() {
+//       alert(name);
+//     }
+  
+//     return displayName;
+//   }
+  
+//   var myFunc = makeFunc();
+//   myFunc();
