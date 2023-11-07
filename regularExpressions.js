@@ -103,45 +103,65 @@ const obj = {
 // ? - нуль или 1 раз
 
 
-const alphabet = {
-    a: 1,
-    b: 2,
-    c: 3,
-    d: 4,
-    e: 5,
-    f: 6,
-    g: 7,
-    h: 8,
-    i: 9,
-    j: 10,
-    k: 11,
-    l: 12,
-    m: 13,
-    n: 14,
-    o: 15,
-    p: 16,
-    q: 17,
-    r: 18,
-    s: 19,
-    t: 20,
-    u: 21,
-    v: 22,
-    w: 23,
-    x: 24,
-    y: 25,
-    z: 26
-  }
+// const alphabet = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+//     d: 4,
+//     e: 5,
+//     f: 6,
+//     g: 7,
+//     h: 8,
+//     i: 9,
+//     j: 10,
+//     k: 11,
+//     l: 12,
+//     m: 13,
+//     n: 14,
+//     o: 15,
+//     p: 16,
+//     q: 17,
+//     r: 18,
+//     s: 19,
+//     t: 20,
+//     u: 21,
+//     v: 22,
+//     w: 23,
+//     x: 24,
+//     y: 25,
+//     z: 26
+//   }
 
-  function alphabetPosition(text) {
-    let str = ""
-    for(let i = 0; i < text.length; i++){
-        for(let key in alphabet){
-            if (text[i].toLowerCase() === key){
-                str += `${alphabet[key]}  `
-            }
-        }
+//   function alphabetPosition(text) {
+//     let str = ""
+//     for(let i = 0; i < text.length; i++){
+//         for(let key in alphabet){
+//             if (text[i].toLowerCase() === key){
+//                 str += `${alphabet[key]}  `
+//             }
+//         }
+//     }
+//     return str
+//   }
+
+//   console.log(alphabetPosition("The sunset sets at twelve o' clock.")) 
+//   //20  8  5  19  21  14  19  5  20  19  5  20  19  1  20  20  23  5  12  22  5  15  3  12  15  3  11
+//------------------------------------------
+
+function digPow(n, p) {
+    if(n === 0){
+        return;
     }
-    return str
+    
+    let digit = n % 10
+    digPow(Math.floor(n / 10));
+    
+    console.log(digit)
   }
+  
+  digPow(189);
 
-  console.log(alphabetPosition("The sunset sets at twelve o' clock.")) //20  8  5  19  21  14  19  5  20  19  5  20  19  1  20  20  23  5  12  22  5  15  3  12  15  3  11
+
+   // Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
+
+  //digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1
