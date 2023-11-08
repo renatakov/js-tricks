@@ -148,29 +148,63 @@ const obj = {
 //   //20  8  5  19  21  14  19  5  20  19  5  20  19  1  20  20  23  5  12  22  5  15  3  12  15  3  11
 //------------------------------------------
 
-function digPow(n, p) {
-    const s = n.toString();
-    let total = [];
-    let sum = 0
-    for (let i = 0; i < s.length; i++) {
-        const digit = parseInt(s[i], 10);
-        total.push(Math.pow(digit, p));
-        p++;
-    }
-    total.reduce((acc, currVal)=>{
-        sum = acc + currVal
-        return sum
-    }, 0)
-    if(sum % n == 0){
-        return sum / n
-    } else{
-        return -1
-    }
-}
+// function digPow(n, p) {
+//     const s = n.toString();
+//     let total = [];
+//     let sum = 0
+//     for (let i = 0; i < s.length; i++) {
+//         const digit = parseInt(s[i], 10);
+//         total.push(Math.pow(digit, p));
+//         p++;
+//     }
+//     total.reduce((acc, currVal)=>{
+//         sum = acc + currVal
+//         return sum
+//     }, 0)
+//     if(sum % n == 0){
+//         return sum / n
+//     } else{
+//         return -1
+//     }
+// }
 
-console.log(digPow(695, 2))
+// console.log(digPow(695, 2))
 
 
-   // Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
 
-  //digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1
+// Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
+
+//digPow(89, 1) should return 1 since 8¹ + 9² = 89 = 89 * 1
+// --------------------------------------------
+
+// function openOrSenior(data){
+//     for(let i = 0; i < data.length; i++){
+//             if(data[i][0] >= 55 && data[i][1] >7){
+//                 data[i] = "Senior"
+//             } else {
+//                 data[i] = "Open"
+//             }
+            
+//         }
+//         return data
+// }
+
+// console.log(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]))
+
+//-----------------------------------------------
+
+// function sumTwoSmallestNumbers(numbers) {
+//     let arr = []
+//     let total = 0
+//     numbers.sort((a, b)=>a-b)
+//         arr = numbers.slice(0,2)
+//         arr.reduce((acc, currVal)=>{
+//             total = acc + currVal
+//             return total
+//         }, 0)
+
+//         return total
+        
+//   }
+
+//   console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7])) // 10
