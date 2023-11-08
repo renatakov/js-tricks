@@ -149,17 +149,26 @@ const obj = {
 //------------------------------------------
 
 function digPow(n, p) {
-    if(n === 0){
-        return;
+    const s = n.toString();
+    let total = [];
+    let sum = 0
+    for (let i = 0; i < s.length; i++) {
+        const digit = parseInt(s[i], 10);
+        total.push(Math.pow(digit, p));
+        p++;
     }
-    
-    let digit = n % 10
-    digPow(Math.floor(n / 10));
-    
-    console.log(digit)
-  }
-  
-  digPow(189);
+    total.reduce((acc, currVal)=>{
+        sum = acc + currVal
+        return sum
+    }, 0)
+    if(sum % n == 0){
+        return sum / n
+    } else{
+        return -1
+    }
+}
+
+console.log(digPow(695, 2))
 
 
    // Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
