@@ -209,26 +209,45 @@ const obj = {
 
 //   console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7])) // 10
 
-function persistence(num, i = 0) {
-    let n1 = 1;
-    const arr = [...num.toString()]
-    const newArr = arr.map((item)=> {return +item})
-    if(num <= 9){
-        return i
-    }
-    newArr.reduce((acc, cur)=>{
-        n1 = acc * cur
-        return n1
-    },n1)
-    if (n1 > 9) {
-        return persistence(n1, i+1);
-    } else {
-        return i+1
-    }
-}
+// function persistence(num, i = 0) {
+//     let n1 = 1;
+//     const arr = [...num.toString()]
+//     const newArr = arr.map((item)=> {return +item})
+//     if(num <= 9){
+//         return i
+//     }
+//     newArr.reduce((acc, cur)=>{
+//         n1 = acc * cur
+//         return n1
+//     },n1)
+//     if (n1 > 9) {
+//         return persistence(n1, i+1);
+//     } else {
+//         return i+1
+//     }
+// }
 
-console.log(persistence(999)) // 4
+// console.log(persistence(999)) // 4
 
 // 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
 // 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
 // 4 --> 0 (because 4 is already a one-digit number)
+
+//-------------------------------------------------
+
+// function solution(number){
+//     let arr = []
+//     let sum = 0
+//     for(let i = 1; i < number; i++){
+//         arr.push(i)
+//     }
+//     arr.filter(item => item % 3 === 0 || item % 5 === 0).reduce((acc, cur)=>{
+//         sum = acc + cur
+//         return sum
+//     }, sum)
+//     return sum
+// }
+
+// console.log(solution(16))
+
+// ------------------------------------------------
