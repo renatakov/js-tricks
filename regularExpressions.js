@@ -252,22 +252,28 @@ const obj = {
 
 // ------------------------------------------------
 
-function DNAStrand(dna){
-    let newStr = ""
-    const dnaObj = {
-        A: 'T',
-        T: 'A',
-        C: 'G',
-        G: 'C'
-    }
-    for(let i = 0; i < dna.length; i++){
-        for(let key in dnaObj){
-            if(dna[i] === key){
-                newStr+=dnaObj[key]
-            }
-        }
-    }
-    return newStr
-}
+// function DNAStrand(dna){
+//     let newStr = ""
+//     const dnaObj = {
+//         A: 'T',
+//         T: 'A',
+//         C: 'G',
+//         G: 'C'
+//     }
+//     for(let i = 0; i < dna.length; i++){
+//         for(let key in dnaObj){
+//             if(dna[i] === key){
+//                 newStr+=dnaObj[key]
+//             }
+//         }
+//     }
+//     return newStr
+// }
 
-console.log(DNAStrand("ATTGC"))
+// console.log(DNAStrand("ATTGC"))
+
+//-------------------------------------------------
+
+// function XO(str) {
+    
+// }
