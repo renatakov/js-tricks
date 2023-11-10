@@ -251,3 +251,23 @@ const obj = {
 // console.log(solution(16))
 
 // ------------------------------------------------
+
+function DNAStrand(dna){
+    let newStr = ""
+    const dnaObj = {
+        A: 'T',
+        T: 'A',
+        C: 'G',
+        G: 'C'
+    }
+    for(let i = 0; i < dna.length; i++){
+        for(let key in dnaObj){
+            if(dna[i] === key){
+                newStr+=dnaObj[key]
+            }
+        }
+    }
+    return newStr
+}
+
+console.log(DNAStrand("ATTGC"))
