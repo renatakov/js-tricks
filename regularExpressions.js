@@ -274,11 +274,11 @@ const obj = {
 
 //-------------------------------------------------
 
-function XO(str) {
-    const xLength = (str.match(/x/ig) || []).length;
-    const oLength = (str.match(/o/ig) || []).length;
-    return xLength === oLength || xLength === 0 && oLength === 0;
+// function XO(str) {
+//     const xLength = (str.match(/x/ig) || []).length;
+//     const oLength = (str.match(/o/ig) || []).length;
+//     return xLength === oLength || xLength === 0 && oLength === 0;
 
-}
+// }
 
-console.log(XO("xoxo")) // true
+// console.log(XO("xoxo")) // true

@@ -17,13 +17,13 @@
 
 // return
 //return - возвращает значени ф-ции
-document.querySelector(".btnSub").addEventListener("click", ()=>{
-    let userYear = +document.querySelector(".inputYear").value
-    if(userYear < 999) return;
-    if(userYear === null) return;
-    document.querySelector(".output").innerHTML = new Date().getFullYear() - userYear
-    document.querySelector(".inputYear").value = null;
-    })
+// document.querySelector(".btnSub").addEventListener("click", ()=>{
+//     let userYear = +document.querySelector(".inputYear").value
+//     if(userYear < 999) return;
+//     if(userYear === null) return;
+//     document.querySelector(".output").innerHTML = new Date().getFullYear() - userYear
+//     document.querySelector(".inputYear").value = null;
+//     })
 
     // НЕЛЬЗЯ ПЕРЕНОСИТЬ RETURN 
     //a;
@@ -471,19 +471,19 @@ document.querySelector(".btnSub").addEventListener("click", ()=>{
 
 // Допустим, у нас есть односвязный список (как описано в главе Рекурсия и стек):
 
-let list = {
-    value: 1,
-    next: {
-    value: 2,
-    next: {
-        value: 3,
-        next: {
-        value: 4,
-        next: null
-        }
-    }
-    }
-};
+// let list = {
+//     value: 1,
+//     next: {
+//     value: 2,
+//     next: {
+//         value: 3,
+//         next: {
+//         value: 4,
+//         next: null
+//         }
+//     }
+//     }
+// };
 // Напишите функцию printList(list), которая выводит элементы списка по одному.
 
 // Сделайте два варианта решения: используя цикл и через рекурсию.

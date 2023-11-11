@@ -16,3 +16,16 @@
   align-content: space-between;
 }
 
+.firstDiv{
+  width: 200px;
+  height: 200px;
+  border-radius: 13px;
+  margin: 0 auto;
+}
+
+.todo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
