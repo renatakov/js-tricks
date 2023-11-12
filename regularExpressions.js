@@ -286,16 +286,18 @@
 // ---------------------------------------------
 
 function generateHashtag (str) {
-    if(str === undefined || str == " "){
+    if(str === undefined || str.trim() == ""){
         return false
     } else {
         let newStr = str.split(" ")
         for(let i = 0; i < newStr.length; i++){
             newStr[i] = `${newStr[i].charAt().toUpperCase()}${newStr[i].slice(1, newStr[i].length)}`
-            if(newStr[i].length > 140){
+            if(newStr[i].length >= 140){
                 return false
             }
         }
         return `#${newStr.join('')}`
     }
 }
+
+console.log(generateHashtag(" ".repeat(121)))
