@@ -56,21 +56,21 @@
 // console.log(regExp.exec(multiplyString))
 // console.log(regExp.exec(multiplyString))
 
-const obj = {
-    I: 1,
-    IV: 4,
-    V: 5,
-    IX: 9,
-    X: 10,
-    XL: 40,
-    L: 50,
-    XC: 90,
-    C: 100,
-    CD: 400,
-    D: 500,
-    CM: 900,
-    M: 1000
-}
+// const obj = {
+//     I: 1,
+//     IV: 4,
+//     V: 5,
+//     IX: 9,
+//     X: 10,
+//     XL: 40,
+//     L: 50,
+//     XC: 90,
+//     C: 100,
+//     CD: 400,
+//     D: 500,
+//     CM: 900,
+//     M: 1000
+// }
 
 // let a = 1
 
@@ -282,3 +282,20 @@ const obj = {
 // }
 
 // console.log(XO("xoxo")) // true
+
+// ---------------------------------------------
+
+function generateHashtag (str) {
+    if(str === undefined || str == " "){
+        return false
+    } else {
+        let newStr = str.split(" ")
+        for(let i = 0; i < newStr.length; i++){
+            newStr[i] = `${newStr[i].charAt().toUpperCase()}${newStr[i].slice(1, newStr[i].length)}`
+            if(newStr[i].length > 140){
+                return false
+            }
+        }
+        return `#${newStr.join('')}`
+    }
+}
