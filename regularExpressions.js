@@ -285,19 +285,34 @@
 
 // ---------------------------------------------
 
-function generateHashtag (str) {
-    if(str === undefined || str.trim() == ""){
-        return false
-    } else {
-        let newStr = str.split(" ")
-        for(let i = 0; i < newStr.length; i++){
-            newStr[i] = `${newStr[i].charAt().toUpperCase()}${newStr[i].slice(1, newStr[i].length)}`
-            if(newStr[i].length >= 140){
-                return false
-            }
-        }
-        return `#${newStr.join('')}`
-    }
-}
+// function generateHashtag (str) {
+//     if(str === undefined || str.trim() == ""){
+//         return false
+//     } else {
+//         let newStr = str.split(" ")
+//         for(let i = 0; i < newStr.length; i++){
+//             newStr[i] = `${newStr[i].charAt().toUpperCase()}${newStr[i].slice(1, newStr[i].length)}`
+//             if(newStr[i].length >= 140){
+//                 return false
+//             }
+//         }
+//         return `#${newStr.join('')}`
+//     }
+// }
 
-console.log(generateHashtag(" ".repeat(121)))
+// console.log(generateHashtag(" ".repeat(121)))
+
+//----------------------------------------------
+
+// let str = "to-camel_case".replace(/-|_/g, "")
+// console.log(str)
+
+// function toCamelCase(str){
+//     str = `${str.slice(0, str.search(/-|_/))}${str.charAt(str.search(/-|_/) + 1).toUpperCase()}${str.slice((str.search(/-|_/) + 2))}`
+    
+
+    
+// return str.replace(/-|_/g, "")
+// }
+
+// console.log(toCamelCase("to-camel_case"))
