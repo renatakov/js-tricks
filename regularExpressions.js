@@ -330,3 +330,15 @@
 // X(?!Y)	Негативна перевірка уперед	X якщо за ним не йде Y
 // (?<=Y)X	Позитивна перевірка назад	X якщо він йде після Y
 // (?<!Y)X	Негативна перевірка назад	X якщо тільки він не йде після Y
+
+// --------------------------------------------
+
+function moveZeros(arr) {
+    let nonZeros = arr.filter(item => item !== 0);
+    let zeros = arr.filter(item => item === 0);
+
+    return nonZeros.concat(zeros);
+}
+
+
+console.log(moveZeros(['3', '7', false, 9, '9', '7', 1, [], '0', [], '8', '3', 3, null, 0]))
