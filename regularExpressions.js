@@ -348,16 +348,15 @@
 // function pigIt(str){
 //     let newStr = str.split(' ')
 //     let arr1 = newStr.map((item, i)=>{
-//         if (/[-_\s\!\?](.)/.test(item)) {
+//         if (/[-_\s\!\?\#]/.test(item)) {
 //             return item;
-//           } else{
-
-//               item = item.slice(1) + item[0] + "ay"
-//               return item
-//           }
-        
-//     })
+//         } 
+//         else{
+//             item = item.slice(1) + item[0] + "ay"
+//             return item
+//         }
+//         })
 //     return arr1.join(" ")
 //   }
 
-//   console.log(pigIt("This is my string"))
+//   console.log(pigIt("O tempora o mores !"))
