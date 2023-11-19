@@ -333,12 +333,31 @@
 
 // --------------------------------------------
 
-function moveZeros(arr) {
-    let nonZeros = arr.filter(item => item !== 0);
-    let zeros = arr.filter(item => item === 0);
+// function moveZeros(arr) {
+//     let nonZeros = arr.filter(item => item !== 0);
+//     let zeros = arr.filter(item => item === 0);
 
-    return nonZeros.concat(zeros);
-}
+//     return nonZeros.concat(zeros);
+// }
 
 
-console.log(moveZeros(['3', '7', false, 9, '9', '7', 1, [], '0', [], '8', '3', 3, null, 0]))
+// console.log(moveZeros(['3', '7', false, 9, '9', '7', 1, [], '0', [], '8', '3', 3, null, 0]))
+
+//-----------------------------
+
+// function pigIt(str){
+//     let newStr = str.split(' ')
+//     let arr1 = newStr.map((item, i)=>{
+//         if (/[-_\s\!\?](.)/.test(item)) {
+//             return item;
+//           } else{
+
+//               item = item.slice(1) + item[0] + "ay"
+//               return item
+//           }
+        
+//     })
+//     return arr1.join(" ")
+//   }
+
+//   console.log(pigIt("This is my string"))
