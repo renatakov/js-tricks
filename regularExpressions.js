@@ -12,7 +12,7 @@
 // \W - все кроме букв
 // \b - граница слова
 // \B - не границ
-      
+
 // В JavaScript регулярные выражения (Regular Expressions) поддерживают различные флаги (modifiers), 
 // которые изменяют поведение сопоставления. Флаги указываются после закрывающего слеша (`/`) в конце 
 // регулярного выражения.
@@ -22,7 +22,7 @@
 // 1. `g` (глобальный поиск):
 //    Этот флаг позволяет выполнить глобальный поиск всех совпадений вместо первого. Если флаг `g` не указан, 
 // поиск остановится после первого совпадения.
-   
+
 // 2. `i` (игнорирование регистра):
 //    Флаг `i` позволяет производить поиск без учета регистра. Например, `/apple/i` будет находить и 
 // "apple" и "Apple".
@@ -184,7 +184,7 @@
 //             } else {
 //                 data[i] = "Open"
 //             }
-            
+
 //         }
 //         return data
 // }
@@ -204,7 +204,7 @@
 //         }, 0)
 
 //         return total
-        
+
 //   }
 
 //   console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7])) // 10
@@ -409,17 +409,50 @@
 
 //-----------------------------------
 
-    // var lastDigitF = function(str1, str2){
-    //     if(isNaN(str1) || isNaN(str2)){
-    //         return null
-    //     }
-    //     str1 = +str1;
-    //     str2 = +str2;
-    //     let pow = Math.pow(str1, str2).toString();
-    //     let lastDigit = pow[pow.length - 1];
-    //     return +lastDigit
-    // };
+// var lastDigitF = function(str1, str2){
+//     if(isNaN(str1) || isNaN(str2)){
+//         return null
+//     }
+//     str1 = +str1;
+//     str2 = +str2;
+//     let pow = Math.pow(str1, str2).toString();
+//     let lastDigit = pow[pow.length - 1];
+//     return +lastDigit
+// };
 
-    // console.log(lastDigitF(3, 9));
+// console.log(lastDigitF(3, 9));
 
-    // -----------------------------
+// -----------------------------
+// function humanReadable(seconds) {
+//     if (seconds > 359999 || seconds === undefined || isNaN(seconds)) {
+//         return '';
+//     } else {
+//         const time = {
+//             hours: Math.floor(seconds / 3600),
+//             minutes: Math.floor((seconds % 3600) / 60),
+//             seconds: Math.floor(seconds % 60)
+//         };
+//         for (const key in time) {
+//             if(time[key] < 10){
+//                 time[key] = `0${time[key]}`
+//             }
+//         }
+//         return `${time.hours}:${time.minutes}:${time.seconds}`;
+//     };
+
+// };
+
+// console.log(humanReadable(90))
+
+// -------------------------------------
+
+function sumStrings(a, b) {
+    a = +a;
+    b = +b;
+    let sum = a + b;
+    if(String(sum).search)
+    return String(sum);
+    
+}
+
+console.log(sumStrings('712569312664357328695151392', '8100824045303269669937'))
