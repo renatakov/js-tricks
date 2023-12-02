@@ -447,12 +447,7 @@
 // -------------------------------------
 
 function sumStrings(a, b) {
-    a = +a;
-    b = +b;
-    let sum = a + b;
-    if(String(sum).search)
-    return String(sum);
-    
-}
+        return String(BigInt(a)+BigInt(b));
+    }
 
 console.log(sumStrings('712569312664357328695151392', '8100824045303269669937'))
