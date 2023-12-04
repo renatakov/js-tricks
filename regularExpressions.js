@@ -446,8 +446,32 @@
 
 // -------------------------------------
 
-function sumStrings(a, b) {
-        return String(BigInt(a)+BigInt(b));
-    }
+// function sumStrings(a, b) {
+//         return String(BigInt(a)+BigInt(b));
+//     }
 
-console.log(sumStrings('712569312664357328695151392', '8100824045303269669937'))
+// console.log(sumStrings('712569312664357328695151392', '8100824045303269669937'))
+
+
+// --------------------------------
+
+function permutations(str) {
+    const result = new Set();
+
+    function generatePermutations(current, remaining) {
+        if (remaining.length === 0) {
+            result.add(current);
+            return;
+        }
+        for (let i = 0; i < remaining.length; i++) {
+            const newCurrent = current + remaining[i];
+            const newRemaining = remaining.slice(0, i) + remaining.slice(i + 1);
+            generatePermutations(newCurrent, newRemaining);
+        }
+    }
+    
+    generatePermutations('', str);
+    return Array.from(result);
+}
+
+console.log(permutations('aabb'));
