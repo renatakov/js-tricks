@@ -455,23 +455,141 @@
 
 // --------------------------------
 
-function permutations(str) {
-    const result = new Set();
+// function permutations(str) {
+//     const result = new Set();
 
-    function generatePermutations(current, remaining) {
-        if (remaining.length === 0) {
-            result.add(current);
-            return;
-        }
-        for (let i = 0; i < remaining.length; i++) {
-            const newCurrent = current + remaining[i];
-            const newRemaining = remaining.slice(0, i) + remaining.slice(i + 1);
-            generatePermutations(newCurrent, newRemaining);
+//     function generatePermutations(current, remaining) {
+//         if (remaining.length === 0) {
+//             result.add(current);
+//             return;
+//         }
+//         for (let i = 0; i < remaining.length; i++) {
+//             const newCurrent = current + remaining[i];
+//             const newRemaining = remaining.slice(0, i) + remaining.slice(i + 1);
+//             generatePermutations(newCurrent, newRemaining);
+//         }
+//     }
+
+//     generatePermutations('', str);
+//     return Array.from(result);
+// }
+
+// console.log(permutations('abc'));
+
+// Первая итерация (i = 0):
+
+// newCurrent = '' + 'a' = 'a'
+// newRemaining = 'bc' (удалили символ 'a' из 'abc')
+// Рекурсивный вызов: generatePermutations('a', 'bc')
+// Вторая итерация (i = 1):
+
+// newCurrent = 'a' + 'b' = 'ab'
+// newRemaining = 'c' (удалили символ 'b' из 'bc')
+// Рекурсивный вызов: generatePermutations('ab', 'c')
+// Третья итерация (i = 0 в рекурсии):
+
+// newCurrent = 'ab' + 'c' = 'abc'
+// newRemaining = '' (удалили символ 'c' из 'c')
+// Рекурсивный вызов: generatePermutations('abc', '')
+// Возврат из рекурсии:
+
+// Функция завершается, и результат 'abc' добавляется в result.
+// Возврат из второй итерации рекурсии:
+
+// Теперь вторая итерация завершилась, и результат 'ab' добавляется в result.
+// Третья итерация (i = 2 в рекурсии):
+
+// newCurrent = 'a' + 'c' = 'ac'
+// newRemaining = 'b' (удалили символ 'c' из 'bc')
+// Рекурсивный вызов: generatePermutations('ac', 'b')
+// Четвертая итерация (i = 0 в рекурсии):
+
+// newCurrent = 'ac' + 'b' = 'acb'
+// newRemaining = '' (удалили символ 'b' из 'b')
+// Рекурсивный вызов: generatePermutations('acb', '')
+// Возврат из четвертой итерации рекурсии:
+
+// Теперь четвертая итерация завершилась, и результат 'acb' добавляется в result.
+// Возврат из второй итерации рекурсии (продолжение):
+
+// Теперь результат 'acb' добавляется в result.
+// Пятая итерация (i = 1 в основной функции):
+
+// newCurrent = '' + 'b' = 'b'
+// newRemaining = 'ac' (удалили символ 'b' из 'abc')
+// Рекурсивный вызов: generatePermutations('b', 'ac')
+// Шестая итерация (i = 0 в рекурсии):
+
+// newCurrent = 'b' + 'a' = 'ba'
+// newRemaining = 'c' (удалили символ 'a' из 'ac')
+// Рекурсивный вызов: generatePermutations('ba', 'c')
+// Седьмая итерация (i = 0 в рекурсии):
+
+// newCurrent = 'ba' + 'c' = 'bac'
+// newRemaining = '' (удалили символ 'c' из 'c')
+// Рекурсивный вызов: generatePermutations('bac', '')
+// Возврат из седьмой итерации рекурсии:
+
+// Теперь седьмая итерация завершилась, и результат 'bac' добавляется в result.
+// Возврат из шестой итерации рекурсии:
+
+// Теперь результат 'bac' добавляется в result.
+// Восьмая итерация (i = 1 в рекурсии):
+
+// newCurrent = 'b' + 'c' = 'bc'
+// newRemaining = 'a' (удалили символ 'c' из 'ac')
+// Рекурсивный вызов: generatePermutations('bc', 'a')
+// Девятая итерация (i = 0 в рекурсии):
+
+// newCurrent = 'bc' + 'a' = 'bca'
+// newRemaining = '' (удалили символ 'a' из 'a')
+// Рекурсивный вызов: generatePermutations('bca', '')
+// Возврат из девятой итерации рекурсии:
+
+// Теперь девятая итерация завершилась, и результат 'bca' добавляется в result.
+// Возврат из восьмой итерации рекурсии:
+
+// Теперь результат 'bca' добавляется в result.
+// Десятая итерация (i = 2 в основной функции):
+
+// newCurrent = '' + 'c' = 'c'
+// newRemaining = 'ab' (удалили символ 'c' из 'abc')
+// Рекурсивный вызов: generatePermutations('c', 'ab')
+// Остальные итерации в основной функции:
+
+// Процесс повторяется для оставшихся символов, генерируя все возможные перестановки.
+// Возврат результата:
+
+// Функция завершается, и результат, содержащий все уникальные перестановки ('abc', 'acb', 'bac', 'bca', 'cab', 'cba'), возвращается.
+
+// -------------------------------------
+let arr = [];
+
+function pairEmUp(n, newArr = []) {
+    if (newArr.length % 2 === 0 && newArr.length >= 2 ) {
+        arr.push([...newArr]);
+        return;
+    } else {
+        for (let i = 0; i < n; i++) {
+                if(!newArr.includes(i)){
+                    newArr.push(i);
+                    pairEmUp(n, newArr);
+                    newArr.pop();
+                }
         }
     }
-    
-    generatePermutations('', str);
-    return Array.from(result);
 }
 
-console.log(permutations('aabb'));
+pairEmUp(3);
+console.log(arr);
+
+
+// function sum1(num) {
+//     if(num === 0){
+//         return 0
+//     } else {
+//         return num + sum1(num-1)
+//     }
+// }
+
+// console.log(sum1(10))
