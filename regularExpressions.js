@@ -563,26 +563,21 @@
 // Функция завершается, и результат, содержащий все уникальные перестановки ('abc', 'acb', 'bac', 'bca', 'cab', 'cba'), возвращается.
 
 // -------------------------------------
-let arr = [];
 
-function pairEmUp(n, newArr = []) {
-    if (newArr.length % 2 === 0 && newArr.length >= 2 ) {
-        arr.push([...newArr]);
-        return;
-    } else {
-        for (let i = 0; i < n; i++) {
-                if(!newArr.includes(i)){
-                    newArr.push(i);
-                    pairEmUp(n, newArr);
-                    newArr.pop();
-                }
-        }
+function reduce(fraction) {
+    const [a, b] = fraction;
+    if(b === 0) return;
+    function findN(a, b){
+        return b === 0 ? a : findN(b, a % b)
     }
+    const n = findN(a, b)
+    const n1 = a / n;
+    const n2 = b / n;
+    if(n1 / n2 === 1) return 1
+    return [n1, n2]
 }
 
-pairEmUp(3);
-console.log(arr);
-
+console.log(reduce([16, 24]))
 
 // function sum1(num) {
 //     if(num === 0){
