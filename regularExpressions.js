@@ -564,20 +564,20 @@
 
 // -------------------------------------
 
-function reduce(fraction) {
-    const [a, b] = fraction;
-    if(b === 0) return;
-    function findN(a, b){
-        return b === 0 ? a : findN(b, a % b)
-    }
-    const n = findN(a, b)
-    const n1 = a / n;
-    const n2 = b / n;
-    if(n1 / n2 === 1) return 1
-    return [n1, n2]
-}
+// function reduce(fraction) {
+//     const [a, b] = fraction;
+//     if(b === 0) return;
+//     function findN(a, b){
+//         return b === 0 ? a : findN(b, a % b)
+//     }
+//     const n = findN(a, b)
+//     const n1 = a / n;
+//     const n2 = b / n;
+//     if(n1 / n2 === 1) return 1
+//     return [n1, n2]
+// }
 
-console.log(reduce([16, 24]))
+// console.log(reduce([16, 24]))
 
 // function sum1(num) {
 //     if(num === 0){
@@ -588,3 +588,41 @@ console.log(reduce([16, 24]))
 // }
 
 // console.log(sum1(10))
+
+// ----------------------
+
+// Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+
+// recursion
+// function sumTo(n){
+//     if(n === 1) return n
+//     return n + sumTo(n-1)
+// }
+
+// console.log(sumTo(4)) // 4+3+2+1 = 10
+
+// for
+
+// function sumTo(n){
+//     let sum = 0;
+//     for(let i = 1; i <= n; i++){
+//         sum += i;
+//     }
+//     return sum
+// }
+
+// console.log(sumTo(4)) // 4+3+2+1 = 10
+
+// --------------------
+
+// function removeSmallest(numbers) {
+//     let min = Math.min(...numbers);
+//     let i = numbers.findIndex(el => el === min)
+//     if (i === -1) return []
+//     return numbers.filter((el, index) => {
+//         return index != i
+//     })
+// }
+// console.log(removeSmallest([1, 2, 3, 4, 5]))
+
+// -------------------------
