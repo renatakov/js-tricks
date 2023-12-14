@@ -626,3 +626,92 @@
 // console.log(removeSmallest([1, 2, 3, 4, 5]))
 
 // -------------------------
+// function multiply(n, l) {
+//     let newArr = [...l].map((el)=>
+//         el = Math.round(el/(1/n))
+//     )
+//     return newArr
+//     }
+
+//     console.log(multiply(-239.00000000000003, [1, 2, 3]))
+
+// ----------------------
+
+// function sumStrings(a, b) {
+//         if(isNaN(a) || a === ''){
+//             return b
+//         } else if(isNaN(b) || b === ''){
+//             return a;
+//         } else {
+//             const result = BigInt(a) + BigInt(b);
+//             return result.toString();
+//         }
+
+
+// }
+
+// console.log(sumStrings('', '5')) // => '5'
+
+// ----------------------
+
+// function whatCentury(year) {
+//     let num = Math.floor(parseInt(year, 10) / 100);
+//     let suffix = "";
+
+//     if (num >= 11 && num <= 13) {
+//         suffix = "th";
+//     } else {
+//         switch (num % 10) {
+//             case 1:
+//                 suffix = "st";
+//                 break;
+//             case 2:
+//                 suffix = "nd";
+//                 break;
+//             case 3:
+//                 suffix = "rd";
+//                 break;
+//             default:
+//                 suffix = "th";
+//         }
+//     }
+
+//     return `${num}${suffix}`;
+// }
+
+// console.log(whatCentury("2000"))
+
+// -----------------------------------
+
+// function squareDigits(num) {
+//     let strNum = String(num).split('');
+//     strNum.map((item)=>Number(item) ** 2)
+//     return +strNum.map((item)=>Number(item) ** 2).join('')
+// }
+
+// console.log(squareDigits(9119))
+
+// ---------------------------------
+
+// function countBy(x, n) {
+//     let z = [];
+//     for (let i = 1; i <= n; i++) {
+//         z.push(i * x)
+//     }
+//     return z;
+// }
+
+// console.log(countBy(2, 5))
+
+// ------------------------------
+
+// function removeAllTheMarkedElementsofaList(arr, removeElementsArr){
+//     for(let i = 0; i < removeElementsArr.length; i++){
+//         arr = arr.filter(item => item !== removeElementsArr[i])
+//     }
+//     return arr
+// }
+
+// console.log(removeAllTheMarkedElementsofaList([1, 1, 2 ,3 ,1 ,2 ,3 ,4, 4, 3 ,5, 6, 7, 2, 8], [1, 3, 4, 2]))
+
+// -------------------------
