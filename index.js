@@ -181,3 +181,36 @@
 //         }
 //     })
 // })
+
+// sort()
+
+const arr = [
+    {
+        name: "Renata",
+        age: 21,
+        email: "renatakov1010@gmail.com",
+        country: "Ukraine"
+    },
+    {
+        name: "John",
+        age: 25,
+        email: "john123@mail.us",
+        country: "USA"
+    },
+    {
+        name: "Anna",
+        age: 29,
+        email: "annahecker@mail.de",
+        country: "Germany"
+    }
+]
+
+arr.sort((a,b)=>{
+    if(a.country.toLowerCase() < b.country.toLowerCase()){
+        return -1
+    } else {
+        return 1
+    }
+})
+
+console.table(arr)
