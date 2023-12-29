@@ -80,14 +80,14 @@
 // .then((res)=>{
 //     console.log(res.data);
 //     users = res.data;
-    
+
 // })
 
 // const numbers = [11, 2, 55, 3]
 
 //     numbers.sort((a, b) =>{
 //     return b - a; // 55, 11, 3, 2
-    
+
 // })
 
 // console.log(numbers);
@@ -138,7 +138,7 @@
 // .then((res)=>{
 //     console.log(res.data);
 //     users = res.data;
-    
+
 // })
 
 // login
@@ -184,33 +184,59 @@
 
 // sort()
 
-const arr = [
-    {
-        name: "Renata",
-        age: 21,
-        email: "renatakov1010@gmail.com",
-        country: "Ukraine"
-    },
-    {
-        name: "John",
-        age: 25,
-        email: "john123@mail.us",
-        country: "USA"
-    },
-    {
-        name: "Anna",
-        age: 29,
-        email: "annahecker@mail.de",
-        country: "Germany"
-    }
-]
+// const arr = [
+//     {
+//         name: "Renata",
+//         age: 21,
+//         email: "renatakov1010@gmail.com",
+//         country: "Ukraine"
+//     },
+//     {
+//         name: "John",
+//         age: 25,
+//         email: "john123@mail.us",
+//         country: "USA"
+//     },
+//     {
+//         name: "Anna",
+//         age: 29,
+//         email: "annahecker@mail.de",
+//         country: "Germany"
+//     }
+// ]
 
-arr.sort((a,b)=>{
-    if(a.country.toLowerCase() < b.country.toLowerCase()){
-        return -1
-    } else {
-        return 1
-    }
-})
+// arr.sort((a,b)=>{
+//     if(a.country.toLowerCase() < b.country.toLowerCase()){
+//         return -1
+//     } else {
+//         return 1
+//     }
+// })
 
-console.table(arr)
+// console.table(arr)
+
+// ----------------------
+const morseAlphabet = {
+    A: '.-', B: '-...', C: '-.-.', D: '-..', E: '.', F: '..-.', G: '--.', H: '....', I: '..', J: '.---',
+    K: '-.-', L: '.-..', M: '--', N: '-.', O: '---', P: '.--.', Q: '--.-', R: '.-.', S: '...', T: '-',
+    U: '..-', V: '...-', W: '.--', X: '-..-', Y: '-.--', Z: '--..',
+    1: '.----', 2: '..---', 3: '...--', 4: '....-', 5: '.....', 6: '-....', 7: '--...', 8: '---..', 9: '----.',
+    0: '-----',
+    '.': '.-.-.-', ',': '--..--', '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-',
+    '&': '.-...', ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.', '$': '...-..-',
+    '@': '.--.-.', ' ': '  '
+};
+function decodeMorseCode(morseCode) {
+    let arr = morseCode.split(" ")
+    for (let i = 0; i < arr.length; i++) {
+        for (const key in morseAlphabet) {
+            if (morseAlphabet[key] === arr[i]) {
+                arr[i] = key
+
+            }
+        }
+    }
+    return arr.join('')
+}
+
+console.log(decodeMorseCode('.... . -.--   .--- ..- -.. .'))
