@@ -216,27 +216,12 @@
 // console.table(arr)
 
 // ----------------------
-const morseAlphabet = {
-    A: '.-', B: '-...', C: '-.-.', D: '-..', E: '.', F: '..-.', G: '--.', H: '....', I: '..', J: '.---',
-    K: '-.-', L: '.-..', M: '--', N: '-.', O: '---', P: '.--.', Q: '--.-', R: '.-.', S: '...', T: '-',
-    U: '..-', V: '...-', W: '.--', X: '-..-', Y: '-.--', Z: '--..',
-    1: '.----', 2: '..---', 3: '...--', 4: '....-', 5: '.....', 6: '-....', 7: '--...', 8: '---..', 9: '----.',
-    0: '-----',
-    '.': '.-.-.-', ',': '--..--', '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-',
-    '&': '.-...', ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.', '$': '...-..-',
-    '@': '.--.-.', ' ': '  '
-};
-function decodeMorseCode(morseCode) {
-    let arr = morseCode.split(" ")
-    for (let i = 0; i < arr.length; i++) {
-        for (const key in morseAlphabet) {
-            if (morseAlphabet[key] === arr[i]) {
-                arr[i] = key
+let arr = [];
 
-            }
-        }
-    }
-    return arr.join('')
+function splitNumberIntoGroups(num) {
+    if (num === 0) return arr;
+    arr.unshift(`${num % 1000}`);
+    return splitNumberIntoGroups(Math.floor(num / 1000));
 }
 
-console.log(decodeMorseCode('.... . -.--   .--- ..- -.. .'))
+console.log(splitNumberIntoGroups(10110116).join());
