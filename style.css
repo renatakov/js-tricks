@@ -30,7 +30,7 @@
   align-items: center;
 } */
 
-body{
+body {
   font-family: Arial, sans-serif;
   --light-theme-text: #000;
   --light-theme-background: #fff;
@@ -38,12 +38,12 @@ body{
   background-color: var(--light-theme-background);
 }
 
-body.dark-theme{
+body.dark-theme {
   --light-theme-text: #fff;
   --light-theme-background: #000;
 }
 
-div{
+div {
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -51,14 +51,43 @@ div{
   justify-content: center;
 }
 
-div > svg{
+div>svg {
   width: 200px;
   flex: 0 1 10%;
   fill: var(--light-theme-text);
 }
 
-div p{
+div p {
   font-size: 16px;
   text-align: center;
-  
+
+}
+
+li {
+  list-style-type: none;
+}
+
+.multistep > li:before {
+  content: '';
+  display: flex;
+  width: 20%;
+  height: 10px;
+  position: relative;
+  top: 0;
+  left: -10%;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.multistep > li.clicked:before {
+  content: '';
+  display: flex;
+  width: 20%;
+  height: 10px;
+  position: relative;
+  top: 0;
+  background-color: #7f2828;
+  left: -10%;
+  border-radius: 50%;
+  border: 1px solid #000;
 }

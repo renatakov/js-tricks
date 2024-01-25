@@ -216,12 +216,13 @@
 // console.table(arr)
 
 // ----------------------
-let arr = [];
+// let arr = [];
 
-function splitNumberIntoGroups(num) {
-    if (num === 0) return arr;
-    arr.unshift(`${num % 1000}`);
-    return splitNumberIntoGroups(Math.floor(num / 1000));
-}
+// function splitNumberIntoGroups(num) {
+//     if (num === 0) return arr;
+//     arr.unshift(`${num % 1000}`);
+//     return splitNumberIntoGroups(Math.floor(num / 1000));
+// }
 
-console.log(splitNumberIntoGroups(10110116).join());
+// console.log(splitNumberIntoGroups(10110116).join());
+
