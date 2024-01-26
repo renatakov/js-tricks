@@ -229,15 +229,13 @@
 // -------------------------------
 
 function lastDigit(arr){
-    arr.map(item=>BigInt(item))
     let result = arr.reduceRight((previousValue, currentValue)=>{
         return currentValue ** previousValue
     }, 1)
-    console.log(result);
     return result % 10
 }
 
-let arr1 = [12,30,21];
+let arr1 = [3, 4, 2];
 
 
 
