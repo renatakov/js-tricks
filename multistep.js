@@ -1,6 +1,6 @@
 const btnMultiStep = document.querySelector('#nextBtn'),
         multiStepLi = document.querySelectorAll('.multistep > li');
-        console.log(multiStepLi);
+        // console.log(multiStepLi);
 
 let index = -1;
 

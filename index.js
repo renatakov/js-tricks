@@ -228,15 +228,47 @@
 
 // -------------------------------
 
-function lastDigit(arr){
-    let result = arr.reduceRight((previousValue, currentValue)=>{
-        return currentValue ** previousValue
-    }, 1)
-    return result % 10
-}
+// function lastDigit(arr){
+//     let result = arr.reduceRight((previousValue, currentValue)=>{
+//         return currentValue ** previousValue
+//     }, 1)
+//     return result % 10;
+// }
 
-let arr1 = [3, 4, 2];
+// let arr1 = [3, 4, 2];
 
 
 
-console.log(lastDigit(arr1));
+// console.log(lastDigit(arr1));
+
+// --------------------------------------
+
+
+// In JavaScript's regular expressions, $& is a special replacement pattern that represents the entire matched substring. So, in the context of the replace method, $& is replaced with the actual substring that matched the regular expression.
+
+// function solution(str) {
+//     let arr = []
+//     arr = str.replace(/.{2}/g, '$& ').split(' ')
+//     return arr.map(item => {
+//         if (item.length !== 2) {
+//             item = item + '_'
+//         }
+//         return item
+//     }).filter(item => {
+//         if (item !== '' && item !== '_') return true
+//     })
+
+// }
+
+// console.log(solution('abcdef'));
+
+// ----------------------------------------
+// function firstNonRepeatingLetter(s) {
+//     for (let i = 0; i < s.length; i++) {
+//         if(s[i].localeCompare())
+        
+//     }
+//     return ''
+// }
+
+// console.log(firstNonRepeatingLetter('sTreSS'));
