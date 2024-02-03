@@ -263,12 +263,22 @@
 // console.log(solution('abcdef'));
 
 // ----------------------------------------
-// function firstNonRepeatingLetter(s) {
-//     for (let i = 0; i < s.length; i++) {
-//         if(s[i].localeCompare())
-        
+// function incrementString(strng) {
+//     if (strng.search(/\d+$/) === -1) {
+//         return strng + '1';
+//     } else if (strng.match(/\d+$/)[0] === '0') {
+//         let lastDigit = +strng.charAt(strng.length - 1) + 1;
+//         let newStr = strng.slice(0, -1) + lastDigit;
+//         return newStr;
+//     } else if(strng.match(/\d+$/)[0] !== '0'){
+//         let lastDigit = +strng.match(/\d+$/)[0] + 1;
+//         let newStr = strng.replace(/\d+$/, lastDigit);
+//         return newStr;
 //     }
-//     return ''
 // }
 
-// console.log(firstNonRepeatingLetter('sTreSS'));
+// let str = 'foobar002';
+// // let lastDigit = +str.charAt(str.length - 1) + 1;
+// // let newStr = str.slice(0, -1) + lastDigit;
+// console.log(str.indexOf(str.match(/\d+/g)));
+// console.log(incrementString('foobar000'));
