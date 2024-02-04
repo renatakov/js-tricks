@@ -238,7 +238,6 @@
 // let arr1 = [3, 4, 2];
 
 
-
 // console.log(lastDigit(arr1));
 
 // --------------------------------------
@@ -266,9 +265,9 @@
 // function incrementString(strng) {
 //     if (strng.search(/\d+$/) === -1) {
 //         return strng + '1';
-//     } else if (strng.match(/\d+$/)[0] === '0') {
-//         let lastDigit = +strng.charAt(strng.length - 1) + 1;
-//         let newStr = strng.slice(0, -1) + lastDigit;
+//     } else if (strng.match(/\d+$/)[0].startsWith('0')) {
+//         let lastDigit = (+strng.match(/[0-9]+$/) + 1).toString().padStart(strng.match(/[0-9]+$/)[0].length, '0');
+//         let newStr = strng.slice(0, strng.indexOf(strng.match(/[0-9]+$/)[0])) + lastDigit;
 //         return newStr;
 //     } else if(strng.match(/\d+$/)[0] !== '0'){
 //         let lastDigit = +strng.match(/\d+$/)[0] + 1;
@@ -277,8 +276,5 @@
 //     }
 // }
 
-// let str = 'foobar002';
-// // let lastDigit = +str.charAt(str.length - 1) + 1;
-// // let newStr = str.slice(0, -1) + lastDigit;
-// console.log(str.indexOf(str.match(/\d+/g)));
-// console.log(incrementString('foobar000'));
+
+// console.log(incrementString('fooobar099'));
