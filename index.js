@@ -278,3 +278,21 @@
 
 
 // console.log(incrementString('fooobar099'));
+
+// ---------------------------------
+
+// function zeros(n) {
+//     if(n === 0) return 0
+//     if(n === 1){
+//         return n
+//     } else {
+//         let number = BigInt(n) * BigInt(zeros(n - 1))
+//         let matchResult = number.toString().match(/0+$/);
+//         let trailingZeros = matchResult !== null ? matchResult[0].length : 0;
+//         console.log(trailingZeros);
+
+//         return trailingZeros;
+//     }
+// }
+
+// console.log(zeros(100));
