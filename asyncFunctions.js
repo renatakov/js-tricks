@@ -29,20 +29,11 @@
 
 
 
-// let fetchPromise = fetch("https://newsapi.org/v2/everything?q=tesla&from=2023-08-24&sortBy=publishedAt&apiKey=5fb16416daac4a89ae9f0cd903059858")
-// .then(response=>{
-//     return response.json()
-// })
-// .then(data=>{
-//     let arr = data.articles.map((item)=>{
-//         return item
-//     })
-//     arr.length = 20
-//     console.log(arr)
-// })
-// .finally(()=>{
-//     console.log("done")
-// })
+// async function newsFunc(){
 
+//     let fetchPromise =  await fetch("http://api.weatherapi.com/v1/current.json?key=f57ded1f279f4aeaa14102446232101&q=London&aqi=no");
+//     return fetchPromise.json()
+// }
 
-// console.log(fetchPromise)
+// console.log(newsFunc())
+

@@ -243,7 +243,6 @@
 // --------------------------------------
 
 
-// In JavaScript's regular expressions, $& is a special replacement pattern that represents the entire matched substring. So, in the context of the replace method, $& is replaced with the actual substring that matched the regular expression.
 
 // function solution(str) {
 //     let arr = []
@@ -281,16 +280,3 @@
 
 // ---------------------------------
 
-function zeros(n) {
-
-    if (n === 0 ||  n === 1) {
-        return n
-    }
-    let number = BigInt(n) * BigInt(zeros(n - 1))
-    return number
-
-}
-
-
-
-console.log(zeros(5));
