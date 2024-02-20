@@ -315,11 +315,16 @@ let nums = {
 }
 
 function parseIntF(string) {
-    for (const num in nums) {
-        if(num === string){
-            return nums[num]
+    let arr = string.replace(/[-]/g, ' ').split(' ');
+    console.log(arr);
+    let newArr = arr.map((item)=>{
+        for (let num in nums) {
+            if (num === item) {
+                return nums[num]
+            }
         }
-    }
+    })
+    return newArr
 }
 
-console.log(parseIntF('hundred'));
+console.log(parseIntF('two hundred forty-six'));
