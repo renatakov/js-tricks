@@ -403,9 +403,13 @@ console.log(phone(dr, '1-908-512-2222'))
 
 
 
+//  ---------------
 
 
+// function topThreeWords(text) {
+// let arr = text.replace(/[#!@*/=+:%$,^&_\.\\-]+/g, ' ').toLowerCase().split(' ');
+// let set = new Set(arr);
 
+// }
 
-
-
+// console.log(topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
