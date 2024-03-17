@@ -358,33 +358,33 @@ const dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kus
 //     return item
 // })
 
-function phone(pb, num) {
-    let n = pb.match(/(?<=<).+(?=>)/gm);
-    let tels = pb.match(/\d{1,3}-\d{3}-\d{3}-\d{4}/gm);
-    let pbArr = pb.split('\n');
-    const found = pbArr.find((item) => item.includes(num));
-    let f = tels.filter(item => item === num);
-    if (f.length > 1) return `Error => Too many people: ${num}`
-    
-    if (found === undefined) return `Error => Not found: ${num}`
-    let adresses = pbArr.map((item) => {
-        for (let i = 0; i < n.length; i++) {
-            item = item.replace(n[i], '').replace(tels[i], '')
-    
-                .split(' ').filter((item) => item !== '').join(' ')
-                .replace(/[<>/?:,;*!+$]/g, '').replace(/_/g, ' ');
-        }
-        return item;
-    });
-    for (let i = 0; i < pbArr.length; i++) {
-    
-        if (pbArr[i].includes(num)) {
-            return `Phone => ${num}, Name => ${n[i]}, Address => ${adresses[i]}`
-        }
-    
-    }
-    }
-console.log(phone(dr, '1-908-512-2222'))
+// function phone(pb, num) {
+//     let n = pb.match(/(?<=<).+(?=>)/gm);
+//     let tels = pb.match(/\d{1,3}-\d{3}-\d{3}-\d{4}/gm);
+//     let pbArr = pb.split('\n');
+//     const found = pbArr.find((item) => item.includes(num));
+//     let f = tels.filter(item => item === num);
+//     if (f.length > 1) return `Error => Too many people: ${num}`
+
+//     if (found === undefined) return `Error => Not found: ${num}`
+//     let adresses = pbArr.map((item) => {
+//         for (let i = 0; i < n.length; i++) {
+//             item = item.replace(n[i], '').replace(tels[i], '')
+
+//                 .split(' ').filter((item) => item !== '').join(' ')
+//                 .replace(/[<>/?:,;*!+$]/g, '').replace(/_/g, ' ');
+//         }
+//         return item;
+//     });
+//     for (let i = 0; i < pbArr.length; i++) {
+
+//         if (pbArr[i].includes(num)) {
+//             return `Phone => ${num}, Name => ${n[i]}, Address => ${adresses[i]}`
+//         }
+
+//     }
+//     }
+// console.log(phone(dr, '1-908-512-2222'))
 // // console.log(drArr[0].includes(numbers[0]));
 // // console.log(newArr);
 
@@ -407,9 +407,26 @@ console.log(phone(dr, '1-908-512-2222'))
 
 
 // function topThreeWords(text) {
-// let arr = text.replace(/[#!@*/=+:%$,^&_\.\\-]+/g, ' ').toLowerCase().split(' ');
-// let set = new Set(arr);
+//     let arr = text.replace(/[#!@*/=+:%$,^&_\.\\-]+/g, ' ').toLowerCase().split(' ');
+//     if(text.search(/[A-Za-z]+/g) === -1) return [];
+//     let s = arr.reduce((acc, cur) => {
+//         if (cur !== '') {
+
+//             acc[cur] = arr.filter(item => item === cur).length
+//         }
+//         return acc
+//     }, {})
+//     let a1 = Object.entries(s).sort((a, b) => {
+//         return b[1] - a[1]
+//     })
+//     if (a1.length === 0) return [];
+    
+//     if (a1.length === 1) return [a1[0][0]];
+
+//     if (a1.length === 2) return [a1[0][0], a1[1][0]];
+//     let a2 = [a1[0][0], a1[1][0], a1[2][0]]
+//     return a2
 
 // }
 
-// console.log(topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
+// console.log(topThreeWords("  '  "));
