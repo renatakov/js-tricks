@@ -420,7 +420,7 @@ const dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kus
 //         return b[1] - a[1]
 //     })
 //     if (a1.length === 0) return [];
-    
+
 //     if (a1.length === 1) return [a1[0][0]];
 
 //     if (a1.length === 2) return [a1[0][0], a1[1][0]];
@@ -430,3 +430,10 @@ const dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kus
 // }
 
 // console.log(topThreeWords("  '  "));
+
+function frankenSplice(arr) {
+    let a2 = arr.map(item => new Boolean(item)).filter(item => item.valueOf() === true)
+    return a2
+}
+
+console.log(frankenSplice([7, "ate", "", false, 9]))
