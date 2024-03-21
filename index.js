@@ -431,9 +431,33 @@ const dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kus
 
 // console.log(topThreeWords("  '  "));
 
-function frankenSplice(arr) {
-    let a2 = arr.map(item => new Boolean(item)).filter(item => item.valueOf() === true)
-    return a2
-}
+// function getIndexToIns(arr, num) {
+//     arr.push(num)
+//     let newArr = arr.sort((a, b) => a - b)
+//     console.log(newArr);
+//     return newArr.findIndex(item => item === num);
+// }
 
-console.log(frankenSplice([7, "ate", "", false, 9]))
+// console.log(getIndexToIns([10, 20, 30, 40, 50], 35))
+
+// function mutation(arr) {
+//     let s = arr[0].split('').map(item => item.toLowerCase());
+//     let s2 = arr[1].split('').map(item => item.toLowerCase());
+//     for (let i = 0; i < s2.length; i++) {
+//         if(s.indexOf(s2[i]) === -1) return false
+//     }
+//     return true
+// }
+
+// console.log(mutation(["hello", "hey"]))
+
+
+// function chunkArrayInGroups(arr, size) {
+//     let newArr = []
+//     while(arr.length > 0){
+//         newArr.push(arr.splice(0, size))
+//     }
+//     return newArr;
+// }
+
+// console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2))
