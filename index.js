@@ -475,10 +475,36 @@ const dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kus
 
 function score(dice) {
     let s = 0;
-    let obj = {}
+    let obj = {};
     dice.forEach(el => {
         obj[el] = dice.filter(i => i === el).length;
-    })
-console.log(obj);
+    });
+    console.log(obj);
+    for (const key in obj) {
+        if (key == 1) {
+            if (obj[key] >= 3 && obj[key] % 3 !== 0) {
+                s += 1000 * (Math.floor(obj[key] / 3)) + ((obj[key] % 3) * 100);
+            } else if (obj[key] % 3 === 0) {
+                s += 1000 * (obj[key] / 3);
+            } else {
+                s += 100 * obj[key];
+            }
+        } else if (key == 5) {
+            if (obj[key] > 3 && obj[key] % 3 !== 0) {
+                s += 500 * (Math.floor(obj[key] / 3)) + ((obj[key] % 3) * 50);
+            } else if (obj[key] % 3 === 0) {
+                s += 500 * (obj[key] / 3);
+            }
+            else {
+                s += 50 * obj[key];
+            }
+        } else if (obj[key] % 3 === 0 && key != 5 && key != 1) {
+            s += +key * 100;
+        } else if(obj[key] >= 3 && obj[key] % 3 !== 0 && key != 5 && key != 1){
+            s += +key * 100 * (Math.floor(obj[key] / 3))
+        }
+    }
+    return s;
 }
-console.log(score([1, 1, 1, 3, 1]));
+
+console.log(score([2, 2, 2, 2, 2]));
