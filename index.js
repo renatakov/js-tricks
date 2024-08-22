@@ -473,38 +473,64 @@ const dr = "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n 133, Green, Rd. <E Kus
 // One   1   =>  100 points
 // One   5   =>   50 point
 
-function score(dice) {
-    let s = 0;
-    let obj = {};
-    dice.forEach(el => {
-        obj[el] = dice.filter(i => i === el).length;
-    });
-    console.log(obj);
-    for (const key in obj) {
-        if (key == 1) {
-            if (obj[key] >= 3 && obj[key] % 3 !== 0) {
-                s += 1000 * (Math.floor(obj[key] / 3)) + ((obj[key] % 3) * 100);
-            } else if (obj[key] % 3 === 0) {
-                s += 1000 * (obj[key] / 3);
-            } else {
-                s += 100 * obj[key];
-            }
-        } else if (key == 5) {
-            if (obj[key] > 3 && obj[key] % 3 !== 0) {
-                s += 500 * (Math.floor(obj[key] / 3)) + ((obj[key] % 3) * 50);
-            } else if (obj[key] % 3 === 0) {
-                s += 500 * (obj[key] / 3);
-            }
-            else {
-                s += 50 * obj[key];
-            }
-        } else if (obj[key] % 3 === 0 && key != 5 && key != 1) {
-            s += +key * 100;
-        } else if(obj[key] >= 3 && obj[key] % 3 !== 0 && key != 5 && key != 1){
-            s += +key * 100 * (Math.floor(obj[key] / 3))
-        }
-    }
-    return s;
+// function score(dice) {
+//     let s = 0;
+//     let obj = {};
+//     dice.forEach(el => {
+//         obj[el] = dice.filter(i => i === el).length;
+//     });
+//     console.log(obj);
+//     for (const key in obj) {
+//         if (key == 1) {
+//             if (obj[key] >= 3 && obj[key] % 3 !== 0) {
+//                 s += 1000 * (Math.floor(obj[key] / 3)) + ((obj[key] % 3) * 100);
+//             } else if (obj[key] % 3 === 0) {
+//                 s += 1000 * (obj[key] / 3);
+//             } else {
+//                 s += 100 * obj[key];
+//             }
+//         } else if (key == 5) {
+//             if (obj[key] > 3 && obj[key] % 3 !== 0) {
+//                 s += 500 * (Math.floor(obj[key] / 3)) + ((obj[key] % 3) * 50);
+//             } else if (obj[key] % 3 === 0) {
+//                 s += 500 * (obj[key] / 3);
+//             }
+//             else {
+//                 s += 50 * obj[key];
+//             }
+//         } else if (obj[key] % 3 === 0 && key != 5 && key != 1) {
+//             s += +key * 100;
+//         } else if(obj[key] >= 3 && obj[key] % 3 !== 0 && key != 5 && key != 1){
+//             s += +key * 100 * (Math.floor(obj[key] / 3))
+//         }
+//     }
+//     return s;
+// }
+
+// console.log(score([2, 2, 2, 2, 2]));
+
+
+// --------------------------------------------------
+
+// Write a function that given, an array arr, returns an array containing at each index i the amount of numbers that are smaller than arr[i] to the right.
+
+// For example:
+
+// * Input [5, 4, 3, 2, 1] => Output [4, 3, 2, 1, 0]
+// * Input [1, 2, 0] => Output [1, 1, 0]
+
+function smaller(nums) {
+    //code me
+    // const newArr = nums.map((item, i) => nums.slice(i).filter(num => num < item).length)
+    // console.log(newArr);
+    
+    // for (let i = 0; i < nums.length; i++) {
+    //     const [first, ...rest] = nums.slice(i)
+    //     const count = rest.filter(num => num < first).length
+    //     newArr.push(count)
+        
+    // }
+    // return newArr
 }
 
-console.log(score([2, 2, 2, 2, 2]));
+console.log(smaller([1, 2, 0]))
